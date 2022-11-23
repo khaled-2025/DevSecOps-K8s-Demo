@@ -1,16 +1,5 @@
 # Starter pipeline
-- task: FortifySCA@7
-  inputs:
-    licenseFile: 'C:\Users\khaled\Downloads\fortify.license'
-    applicationType: 'other'
-    fortifyBuildId: '5'
-    scaVerbose: true
-    scaDebug: true
-    fortifyScanType: 'LocalScan'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
+appendCommitMessageToRunName:
 trigger:
 - main
 
@@ -25,3 +14,16 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: FortifySCA@7
+  inputs:
+    licenseFile: 'C:\Users\khaled\Downloads\fortify.license'
+    applicationType: 'other'
+    fortifyBuildId: '5'
+    scaVerbose: true
+    scaDebug: true
+    fortifyScanType: 'LocalScan'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+
